@@ -1,19 +1,30 @@
 // The video
 let video;
 // For displaying the label
-let label = "waiting...";
+let label = "warten...";
 // The classifier
 let classifier;
 
+let img_Viega;
+let img_microphone;
+let img_poop;
+let img_urine;
+
+let img_dimensions = 300
+
 // STEP 1: Load the model!
 function preload() {
-  classifier = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/0hIAYnqaF/model.json');
+  img_Viega       = loadImage('Images/Viega_Logo.png');
+  img_microphone  = loadImage('Images/microphone.png');
+  img_poop        = loadImage('Images/poop.png');
+  img_urine       = loadImage('Images/dark-urine.png');
+
+  classifier      = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/0hIAYnqaF/model.json');
 }
 
 
 function setup() {
-  createCanvas(640, 520);
-
+  createCanvas(840, 520);
   // STEP 2: Start classifying
   classifyAudio();
 }
@@ -24,25 +35,30 @@ function classifyAudio() {
 }
 
 function draw() {
-  background(0);
+  background(255);
+ 
+  // Drwa rectangle
+  fill(255, 255, 255)
+  strokeWeight(4)
+  rect(2, 2, width - 4, height - 4, 10)
+  image(img_Viega, 15, 15, 100, 80)
 
   // STEP 4: Draw the label
-  textSize(32);
+  textSize(48);
   textAlign(CENTER, CENTER);
-  fill(255);
-  text(label, width / 2, height - 16);
+  fill(0);
+  text(label, width / 2, height - 48);
 
   // Pick an emoji, the "default" is train
-  let emoji = "🎤";
+  let drwan_img = img_microphone //"🎤";
   if (label == "Dick") {
-    emoji = "💩";
+    drwan_img = img_poop //"💩";
   } else if (label == "Dünn") {
-    emoji = "💧";
+    drwan_img = img_urine //"💧";
   }
 
   // Draw the emoji
-  textSize(256);
-  text(emoji, width / 2, height / 2);
+  image(drwan_img, width / 2 - img_dimensions / 2 , height / 2 - img_dimensions / 2, img_dimensions, img_dimensions);
 }
 
 // STEP 3: Get the classification!

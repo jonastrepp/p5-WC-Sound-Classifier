@@ -9,6 +9,7 @@ let img_Viega;
 let img_microphone;
 let img_poop;
 let img_urine;
+let img_wave;
 
 let img_dimensions = 300
 
@@ -18,6 +19,7 @@ function preload() {
   img_microphone  = loadImage('Images/microphone.png');
   img_poop        = loadImage('Images/poop.png');
   img_urine       = loadImage('Images/dark-urine.png');
+  img_wave        = loadImage('Images/wave.png');
 
   classifier      = ml5.soundClassifier('https://teachablemachine.withgoogle.com/models/0hIAYnqaF/model.json');
 }
@@ -55,6 +57,8 @@ function draw() {
     drwan_img = img_poop //"💩";
   } else if (label == "Dünn") {
     drwan_img = img_urine //"💧";
+  } else if (label == "Spülung") {
+    drwan_img = img_wave //"🌊";
   }
 
   // Draw the emoji

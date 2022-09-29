@@ -45,6 +45,10 @@ function draw() {
   rect(2, 2, width - 4, height - 4, 10)
   image(img_Viega, 15, 15, 100, 80)
 
+  textSize(10);
+  fill(0);
+  text("Version 0.4", 40, height - 16);
+
   // STEP 4: Draw the label
   textSize(48);
   textAlign(CENTER, CENTER);

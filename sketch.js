@@ -26,7 +26,7 @@ function preload() {
 
 
 function setup() {
-  createCanvas(960, 560);
+  createCanvas(windowWidth/*940*/, windowHeight/*540*/);
   // STEP 2: Start classifying
   classifyAudio();
 }
@@ -37,12 +37,12 @@ function classifyAudio() {
 }
 
 function draw() {
-  background(255);
+  background(255,255,0);
  
   // Drwa rectangle
   fill(255, 255, 255)
   strokeWeight(4)
-  rect(6, 6, width - 8, height - 8, 10)
+  rect(6, 6, width - 12, height - 12, 10)
   image(img_Viega, 18, 18, 100, 80)
 
   textSize(10);

@@ -26,7 +26,7 @@ function preload() {
 
 
 function setup() {
-  createCanvas(960, 520);
+  createCanvas(960, 560);
   // STEP 2: Start classifying
   classifyAudio();
 }

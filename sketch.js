@@ -26,7 +26,7 @@ function preload() {
 
 
 function setup() {
-  createCanvas(840, 520);
+  createCanvas(960, 520);
   // STEP 2: Start classifying
   classifyAudio();
 }
@@ -42,12 +42,12 @@ function draw() {
   // Drwa rectangle
   fill(255, 255, 255)
   strokeWeight(4)
-  rect(2, 2, width - 4, height - 4, 10)
-  image(img_Viega, 15, 15, 100, 80)
+  rect(6, 6, width - 8, height - 8, 10)
+  image(img_Viega, 18, 18, 100, 80)
 
   textSize(10);
   fill(0);
-  text("Version 0.4", 40, height - 16);
+  text("Version 0.5", 40, height - 16);
 
   // STEP 4: Draw the label
   textSize(48);
